@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 100vh;
+
+    /* all children of the grid container are known as 'grid items' */
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr; 
+    /* the line code above creates 2 columns 
+       and line code below creates 2 rows */
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas: "box1 box2"
+    "box3 box3";
+
+
+    /* justify-items: center;
+    align-items: center; */
+}
+
+.box1{
+    background-color: #ffc7dc;
+
+    /* if box1 is not defined, box2 will be displayed as the first box in the column */
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    grid-area: box1;
+
+    /* 
+    centers the box horizontally
+    align-self: center;
+    */
+    
+
+    /* 
+    centers the box vertically
+    justify-self: center;
+    */
+    
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box2{
+    background-color: #f4e1ff;
+
+    /* line of code below will stretches from top to bottom, which is the entire colum */
+    grid-row: 2/4;
+
+    grid-area: box2;
+}
+
+.box3{
+    background-color: #e1ecff;
+
+    /* 
+    the box3 will stretches from left to right with
+    these line of codes
+
+    grid-column-start: 1;
+    grid-column-end: 3; 
+    
+    the line of code below is the short-cut
+    
+    grid-column: 1/3;
+    */
+
+    grid-row:  1/3;
+
+    grid-area: box3;
+}
