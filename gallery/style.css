@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    /* include the padding and border in an element's total width and height */
+    box-sizing: border-box;
+}
+
+.gallery{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+
+    /* 
+    reapeat(3, 200px) is also same as '200px 200px 200px' 
+    'auto-fill' lets the css grid define how many it can fit and auto-generates spaces
+
+    'auto-fit' does not auto-generate spaces
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    /* creats gap in between the columns and rows */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+}
+
+.gallery img{
+    width: 100%;
+}
